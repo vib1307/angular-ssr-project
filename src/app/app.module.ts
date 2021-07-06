@@ -1,16 +1,20 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LaunchProgramsComponent } from './launch-programs/launch-programs.component';
+import { LaunchDetailsCardComponent } from './launch-details-card/launch-details-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LaunchProgramsComponent,
+    LaunchDetailsCardComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
